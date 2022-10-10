@@ -20,6 +20,8 @@ class Filme:
     self.__nome = novo_nome.title()
 
 vingadores = Filme('Vingadores - guerra infinita', 2018, 160, 10)
+jackie_chan = Filme('jackie chan - as aventuras de john', 2002, 120, 10)
+
 
 print(f'Nome: {vingadores.nome} \nAno: {vingadores.ano} \nTemporadas: {vingadores.duracao} \nLikes: {vingadores.likes}')
 
