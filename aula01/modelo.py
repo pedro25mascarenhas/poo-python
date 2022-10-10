@@ -1,27 +1,20 @@
-class Filme:
-  def __init__(self, nome, ano, duracao, likes):
-    self.__nome = nome.title()
-    self.ano = ano
+from programa import Programa
+
+class Filme(Programa):
+  def __init__(self, nome, ano, duracao):
+    super().__init__(nome, ano)
     self.duracao = duracao
-    self.__likes = likes
+  def __str__(self):
+    return f'{self._nome} - {self.ano} - {self.duracao} min - {self._likes}'
 
-  @property
-  def likes(self):
-    return self.__likes
-  def dar_like(self):
-    self.__likes += 1
-
-  @property
-  def nome(self):
-    return self.__nome
-  
-  @nome.setter
-  def nome(self, novo_nome):
-    self.__nome = novo_nome.title()
-
-vingadores = Filme('Vingadores - guerra infinita', 2018, 160, 10)
-jackie_chan = Filme('jackie chan - as aventuras de john', 2002, 120, 10)
+class Serie(Programa):
+  def __init__(self, nome, ano, temporadas):
+    super().__init__(nome, ano)
+    self.temporadas = temporadas
+  def __str__(self):
+    return f'{self._nome} - {self.ano} - {self.temporadas} temporadas - {self._likes}'
+    
 
 
-print(f'Nome: {vingadores.nome} \nAno: {vingadores.ano} \nTemporadas: {vingadores.duracao} \nLikes: {vingadores.likes}')
+
 
